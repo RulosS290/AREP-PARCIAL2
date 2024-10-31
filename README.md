@@ -44,8 +44,13 @@ El primer commit contiene la logica de binarySearch y linealSearch, junto con su
 ![{16C5646E-648F-45D8-880F-FD86E463D495}](https://github.com/user-attachments/assets/526e2364-8c76-43a4-a6fa-86256e5ccda0)
 
 ![{96EA4FA7-A3F3-4B3E-AA19-A610988C77B7}](https://github.com/user-attachments/assets/53bb9b7f-9c43-43de-9046-4029291d474a)
-
 de manera local, la instancia EC2 ya se creo pero falta subir el .jar
+
+
+Ya en el 3er commit se cambio las reglas de la instancia de EC2 para permitir la conexion HTTP
+
+![{72E01626-2263-4F41-A695-D13F5AFA3AA3}](https://github.com/user-attachments/assets/a201000f-fbb4-414d-80a7-71274059d9db)
+
 
 ### Autores
 
