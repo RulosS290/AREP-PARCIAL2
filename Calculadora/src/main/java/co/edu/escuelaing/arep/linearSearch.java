@@ -25,8 +25,6 @@ public class linearSearch {
         return -1;
     }
 
-
-
     public String getName(){
         return name;
     }

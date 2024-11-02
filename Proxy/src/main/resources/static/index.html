@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Form Example</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <h1>Form with GET for linearSearch</h1>
+        <form>
+            <label for="name">Input List (comma separated):</label><br>
+            <input type="text" id="inputlist" name="inputlist" placeholder="e.g., 1,2,3"><br><br>
+            <label for="value">Search Value:</label><br>
+            <input type="text" id="value" name="value" placeholder="e.g., 2"><br><br>
+            <input type="button" value="Submit" onclick="loadGetMsg()">
+        </form> 
+        <div id="getrespmsg"></div>
+
+        <script>
+            function loadGetMsg() {
+                const inputList = document.getElementById("inputlist").value.split(",").map(Number);
+                const value = document.getElementById("value").value;
+                const url = new URL("http://localhost:8080/linearSearch");
+                url.searchParams.append("inputlist", inputList);
+                url.searchParams.append("value", value);
+
+                fetch(url)
+                    .then(response => response.json())
+                    .then(data => {
+                        document.getElementById("getrespmsg").innerHTML = JSON.stringify(data);
+                    })
+                    .catch(error => {
+                        console.error("Error fetching linearSearch:", error);
+                    });
+            }
+        </script>
+
+        <h1>Form with POST for binarySearch</h1>
+        <form>
+            <label for="postInputList">Input List (comma separated):</label><br>
+            <input type="text" id="postInputList" placeholder="e.g., 1,2,3"><br><br>
+            <label for="postValue">Search Value:</label><br>
+            <input type="text" id="postValue" placeholder="e.g., 2"><br><br>
+            <input type="button" value="Submit" onclick="loadPostMsg()">
+        </form>
+        
+        <div id="postrespmsg"></div>
+        
+        <script>
+            function loadPostMsg(){
+                const inputList = document.getElementById("postInputList").value.split(",").map(Number);
+                const value = document.getElementById("postValue").value;
+                const url = "http://localhost:8080/binarySearch";
+
+                fetch(url, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({ inputlist: inputList, value: parseInt(value) })
+                })
+                .then(response => response.json())
+                .then(data => {
+                    document.getElementById("postrespmsg").innerHTML = JSON.stringify(data);
+                })
+                .catch(error => {
+                    console.error("Error fetching binarySearch:", error);
+                });
+            }
+        </script>
+    </body>
+</html>
