@@ -49,8 +49,11 @@ de manera local, la instancia EC2 ya se creo pero falta subir el .jar
 
 Ya en el 3er commit se cambio las reglas de la instancia de EC2 para permitir la conexion HTTP
 
-![{72E01626-2263-4F41-A695-D13F5AFA3AA3}](https://github.com/user-attachments/assets/a201000f-fbb4-414d-80a7-71274059d9db)
+![imagen](https://github.com/user-attachments/assets/c680ce15-ded6-408d-aa98-ddcee7dd9d6e)
 
+### Video Funcionamiento instancia EC2
+
+[LINK](https://youtu.be/0vOAW2DX5nI)
 
 ### Autores
 
